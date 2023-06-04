@@ -6,7 +6,8 @@ local plugins = {
         "lua-language-server",
         "html-lsp",
         "prettier",
-        "stylua"
+        "stylua",
+        "rust-analyzer",
       },
     },
   },

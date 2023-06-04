@@ -20,6 +20,16 @@ local plugins = {
     end,
   },
   {
+    -- rust format
+    -- https://github.com/rust-lang/rust.vim#formatting-with-rustfmt
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function ()
+      -- let g:rustfmt_autosave = 1
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+  {
     -- syntax highlighting 関連
     "nvim-treesitter/nvim-treesitter",
     opts = {

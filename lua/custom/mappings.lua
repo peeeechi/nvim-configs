@@ -11,11 +11,11 @@ local M = {}
 -- キーマップのカスタマイズ
 M.abc = {
   n = {
-     ["<C-n>"] = {"<cmd> Telescope <CR>", "Telescope"},
-     ["<C-s>"] = {":Telescope Files <CR>", "Telescope Files"},
+    ["<C-n>"] = {"<cmd> Telescope <CR>", "Telescope"},
+    ["<C-s>"] = {":Telescope Files <CR>", "Telescope Files"},
   },
   i = {
-     ["jj"] = { "<ESC>", "escape insert mode" , opts = { nowait = true, noremap = true, silent = true }},
+    ["jj"] = { "<ESC>", "escape insert mode" , opts = { nowait = true, noremap = true, silent = true }},
   }
 }
 

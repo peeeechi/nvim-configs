@@ -18,6 +18,31 @@ local plugins = {
         require "custom.configs.lspconfig"
     end,
   },
+  {
+    -- syntax highlighting 関連
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        -- defaults 
+        "vim",
+        "lua",
+
+        -- web dev 
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        -- "vue", "svelte",
+
+       -- low level
+        "c",
+        "zig"
+      },
+    },
+  },
+
 }
 
 return plugins

@@ -27,7 +27,32 @@ local plugins = {
     init = function ()
       -- let g:rustfmt_autosave = 1
       vim.g.rustfmt_autosave = 1
-    end
+    end,
+  },
+  {
+    -- for debug
+    -- https://github.com/simrat39/rust-tools.nvim
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    opts = function ()
+      return require "custom.configs.rust-tools"
+    end,
+    config = function (_, opts)
+      require('rust-tools').setup(opts)
+    end,
+  },
+  {
+    -- DAP(Debug Adapter Protocol)
+    -- https://github.com/mfussenegger/nvim-dap
+    "mfussenegger/nvim-dap",
+    -- require LLDB(デバッガ)
+    -- sudo apt-get install lldb
+    -- sudo apt install lldb-11
+    -- sudo ln -s /usr/bin/lldb-vscode-11 /usr/bin/lldb-vscode
+  },
+  {
+    "rcarriga/nvim-dap-ui",
   },
   {
     -- for cargo crates

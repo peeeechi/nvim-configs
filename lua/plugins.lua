@@ -1,16 +1,19 @@
-local status, packer = pcall(require, 'packer')
-if (not status) then
-  print("Packer is not installed")
-  return
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  print('lazy.nvim loading ...')
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd [[packadd packer.nvim]]
 
-packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
-end)
-
+require('lazy').setup({
+  'tpope/vim-commentary',
+  'hoob3rt/lualine.nvim',
+}, {})

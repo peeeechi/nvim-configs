@@ -15,7 +15,6 @@ if is_mac then
 elseif is_win then
   require('windows')
 else
-  print('linux')
   vim.opt.clipboard = "unnamedplus"
 end
 

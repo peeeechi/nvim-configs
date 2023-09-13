@@ -1,5 +1,7 @@
 local keymap = vim.keymap
 
+keymap.set('i', 'jj', '<ESC>', {silent = true})
+
 -- Remap space as leader key
 keymap.set('', '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
@@ -20,11 +22,15 @@ keymap.set('n', 'dw', 'vb"_d')
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- New tab
-keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
+keymap.set('n', '<leader>te', ':tabedit<Return>', { silent = true })
+keymap.set('n', '<leader>to', ':tabnew<Return>', { silent = true })
+keymap.set('n', '<leader>tx', ':tabclose<Return>', { silent = true })
+keymap.set('n', '<Tab>', ':tabn<Return>', { silent = true })
+keymap.set('n', '<S-Tab>', ':tabp<Return>', { silent = true })
 
 -- Split window
-keymap.set('n', 'ss', ':split<Return>', { silent = true })
-keymap.set('n', 'sv', ':vsplit<Return>', { silent = true })
+keymap.set('n', '<leader>sh', ':split<Return>', { silent = true })
+keymap.set('n', '<leader>sv', ':vsplit<Return>', { silent = true })
 
 -- Split term
 keymap.set('n', '<leader>h', ':split<Return>:term<Return><S-a>', { silent = true })
@@ -37,16 +43,15 @@ keymap.set('n', '<leader>x', ':q<Return>', { silent = true })
 keymap.set('t', '<C-x>', '<C-\\><C-n>', { silent = true })
 
 -- Move window
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sl', '<C-w>l')
+keymap.set('', 'mh', '<C-w>h')
+keymap.set('', 'mj', '<C-w>j')
+keymap.set('', 'mk', '<C-w>k')
+keymap.set('', 'ml', '<C-w>l')
 
 -- Resize window
-keymap.set('n', '<C-w><C-h>', '<C-w><')
-keymap.set('n', '<C-w><C-j>', '<C-w>-')
-keymap.set('n', '<C-w><C-k>', '<C-w>+')
-keymap.set('n', '<C-w><C-l>', '<C-w>>')
+keymap.set('n', '<C-Left>', '<C-w><')
+keymap.set('n', '<C-Down>', '<C-w>-')
+keymap.set('n', '<C-Up>', '<C-w>+')
+keymap.set('n', '<C-Right>', '<C-w>>')
 
-keymap.set('i', 'jj', '<ESC>', {silent = true})
 
